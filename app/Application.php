@@ -1,7 +1,12 @@
 <?php
 
-function config($key, $var = null) {
-    if ($key == 'App') {
-        if ($_SERVER['APPLI'])
-    }
-}
+/*
+ * Cache
+ */
+new \App\Core\Cache(require_once CONFIG . 'cache.php');
+
+
+/*
+ * Route
+ */
+return new \App\Core\Route();
