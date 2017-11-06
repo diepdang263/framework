@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-class DefaultController {
+class DefaultController extends AppController {
     public function Index($test) {
-        var_dump($test);
+
     }
 
     public function Pages() {
