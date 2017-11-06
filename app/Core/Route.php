@@ -15,8 +15,6 @@ class Route
         }
 
         // Goi controller
-        $paths = json_decode($paths, true);
-
         $class = $paths['class'];
         $method = $paths['method'];
         $param = $paths['param'];
@@ -67,11 +65,11 @@ class Route
             array_shift($routes);
         }
 
-        $paths = json_encode([
+        $paths = [
             'class' => $class,
             'method' => $method,
             'param' => $routes
-        ]);
+        ];
 
         return $paths;
     }

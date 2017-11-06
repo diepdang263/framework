@@ -22,5 +22,14 @@ return [
         'Module' => null,
         'Controller' => 'DefaultController',
         'Method' => 'Index'
-    ]
+    ],
+
+    /*
+     * Cach luu log
+     */
+    'Log' => [
+        'Type' => 'daily', // Support: single, daily
+        'Ext'  => '.log',
+        'Path' => STORAGE . 'logs' . DS
+    ],
 ];

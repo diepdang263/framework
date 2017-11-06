@@ -29,7 +29,7 @@ class Cache
      */
     public static function store($key, $values)
     {
-        if (!self::$predis->set($key, $values)) {
+        if (!self::$predis->set($key, json_encode($values))) {
             return false;
         }
 
@@ -49,7 +49,7 @@ class Cache
         if (empty($value))
             return false;
 
-        return $value;
+        return json_decode($value, true);
     }
 
     /**

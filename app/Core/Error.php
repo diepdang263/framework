@@ -30,7 +30,7 @@ class Error
             print "<h2 style='color: rgb(190, 50, 50);'>Error Occurred:</h2>";
             print "<table style='width: 800px; display: inline-block;'>";
             print "<tr style='background-color:rgb(230,230,230);'><th style='width: 80px;'>Type</th><td>" . $errtype . "</td></tr>";
-            print "<tr style='background-color:rgb(240,240,240);'><th>Message</th><td>{$error['message']}</td></tr>";
+            print "<tr style='background-color:rgb(240,240,240);'><th>Message</th><td><b>{$error['message']}</b></td></tr>";
             print "<tr style='background-color:rgb(230,230,230);'><th>File</th><td>{$error['file']}</td></tr>";
             print "<tr style='background-color:rgb(240,240,240);'><th>Line</th><td>{$error['line']}</td></tr>";
             print "</table></div>";
@@ -84,7 +84,7 @@ class Error
         if (!empty($_SERVER['REMOTE_ADDR']))
             $content .= 'Client IP: ' . $_SERVER['REMOTE_ADDR'] . PHP_EOL;
 
-        Log::write('error', $content);
+        Log::error($content);
     }
 
     protected static function sendMail($error)
